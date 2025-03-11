@@ -1,5 +1,5 @@
 import { StyleSheet, Pressable, Button } from "react-native";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import EditScreenInfo from "@/components/EditScreenInfo";
 import { Text, View } from "@/components/Themed";
 import Colors from "@/constants/Colors";
@@ -16,12 +16,32 @@ export default function TabTwoScreen() {
       {/* <EditScreenInfo path="app/(tabs)/two.tsx" /> */}
       {/* <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" /> */}
       <View style={styles.btns}>
-        <Link href="/(tabs)" asChild>
-          <Pressable>{({ pressed }) => <Button title="Chat" />}</Pressable>
+        <Link href="/chat-example" asChild>
+          {/* <Pressable>{({ pressed }) => <Text>Chat</Text>}</Pressable> */}
+          <Pressable>
+            {({ pressed }) => (
+              <Button
+                title="Chat"
+                onPress={() => {
+                  router.push("/chat-example");
+                }}
+              />
+            )}
+          </Pressable>
         </Link>
 
-        <Link href="/(tabs)" asChild>
-          <Pressable>{({ pressed }) => <Button title="Form" />}</Pressable>
+        <Link href="/form-example" asChild>
+          {/* <Pressable>{({ pressed }) => <Text>Form</Text>}</Pressable> */}
+          <Pressable>
+            {({ pressed }) => (
+              <Button
+                title="Form"
+                onPress={() => {
+                  router.push("/form-example");
+                }}
+              />
+            )}
+          </Pressable>
         </Link>
       </View>
     </View>

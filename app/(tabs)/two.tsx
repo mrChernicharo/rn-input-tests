@@ -31,6 +31,26 @@ export default function TabTwoScreen() {
           )}
         </Pressable>
       </Link>
+
+      <Link href="/chat-example" asChild>
+        <Pressable>
+          {({ pressed }) => (
+            <View>
+              <Text>Chat</Text>
+            </View>
+          )}
+        </Pressable>
+      </Link>
+
+      <Link href="/form-example" asChild>
+        <Pressable>
+          {({ pressed }) => (
+            <View>
+              <Text>Form</Text>
+            </View>
+          )}
+        </Pressable>
+      </Link>
     </View>
   );
 }
